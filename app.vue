@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Home />
+    <Home />ssasdas das das dasd asdasdasd asd asd
     <ContactUs />
   </div>
 </template>
