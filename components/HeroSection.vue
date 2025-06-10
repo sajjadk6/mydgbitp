@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+  <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20" style="background-image: url(//jibit.ir/wp-content/themes/jibit/images/home2/bg_desktop.svg); background-position: center bottom; background-repeat: no-repeat; background-size: cover;">
     <div class="container mx-auto px-6 lg:px-8">
       <div class="flex flex-col lg:flex-row items-center justify-between">
         <div class="lg:w-1/2 mb-10 lg:mb-0">
@@ -30,3 +30,14 @@
     </div>
   </section>
 </template>
+
+<!-- 
+bg-gradient-to-br from-blue-50 to-indigo-100 py-20
+.my-element {
+  /* گرادیانت از blue-50 (#eff6ff) به indigo-100 (#e0e7ff) به سمت پایین راست */
+  background: linear-gradient(to bottom right, #eff6ff, #e0e7ff);
+  
+  /* py-20 = padding-top و padding-bottom برابر 5rem (80px) */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+} -->

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Navbar />
-    <router-view></router-view>
+    <NuxtPage />
   </div>
 </template>
 

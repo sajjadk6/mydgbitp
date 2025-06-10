@@ -58,7 +58,6 @@ const slides = [
         xdgbitسرویس های
       </h2>
 
-      <!-- دکمه‌های انتخاب اسلاید -->
       <div class="flex justify-center gap-4 mb-6">
         <button
           v-for="(slide, index) in slides.slice(0,4)"
@@ -139,3 +138,4 @@ function goToSlide(index) {
   }
 }
 </script>
+
