@@ -9,7 +9,7 @@
       <!-- منوی اصلی -->
       <ul class="hidden lg:flex gap-8 text-gray-700 font-medium">
         <li><a href="#" class="hover:text-blue-600 transition-colors duration-200 py-2">سرویس ها</a></li>
-        <li><NuxtLink to="/contact" class="hover:text-blue-600 transition-colors duration-200 py-2">ارتباط با ما</NuxtLink></li>
+        <li><NuxtLink to="/ContactUs" class="hover:text-blue-600 transition-colors duration-200 py-2">ارتباط با ما</NuxtLink></li>
         <li><a href="#" class="hover:text-blue-600 transition-colors duration-200 py-2">بلاگ</a></li>
         <li><NuxtLink to="/" class="hover:text-blue-600 transition-colors duration-200 py-2">خانه</NuxtLink></li>
       </ul>
