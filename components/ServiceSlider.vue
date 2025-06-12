@@ -208,7 +208,7 @@ const slides = [
   { title: "سرویس 5", description: "توضیحات مختصر درباره سرویس 5." }
 ]
 
-// فقط در سمت کلاینت ماژول‌ها را به صورت async ایمپورت کن
+// فقط در سمت کلاینت ماژول‌ها را به صورت async zzzzzzzzzایمپورت کن
 onMounted(async () => {
   const swiperModule = await import('swiper/vue')
   Swiper.value = swiperModule.Swiper
@@ -231,6 +231,8 @@ function goToSlide(index) {
   }
 }
 </script>
+
+
 
 
 
