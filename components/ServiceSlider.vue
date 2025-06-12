@@ -51,7 +51,7 @@ const slides = [
 ];
 </script> -->
 
-<template>
+<!-- <template>
   <div class="py-10 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">
@@ -137,5 +137,102 @@ function goToSlide(index) {
     swiper.value.slideToLoop(index);
   }
 }
+</script> -->
+
+<template>
+  <div class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">
+        xdgbitسرویس های
+      </h2>
+
+      <!-- دکمه‌های انتخاب اسلاید -->
+      <div class="flex justify-center gap-4 mb-6">
+        <button
+          v-for="(slide, index) in slides.slice(0, 4)"
+          :key="index"
+          @click="goToSlide(index)"
+          :class="[
+            'px-4 py-2 rounded-md cursor-pointer transition',
+            activeIndex === index ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700',
+          ]"
+        >
+          {{ slide.title }}
+        </button>
+      </div>
+
+      <ClientOnly>
+        <template v-if="Swiper && SwiperSlide">
+          <Swiper
+            @swiper="onSwiper"
+            @slideChange="onSlideChange"
+            :modules="[Autoplay, Pagination]"
+            :slides-per-view="1"
+            :loop="true"
+            :autoplay="{ delay: 2000, disableOnInteraction: false }"
+            pagination
+            class="rounded-lg shadow-md"
+            style="height: 200px;"
+          >
+            <SwiperSlide
+              v-for="(slide, index) in slides"
+              :key="index"
+              class="p-6 bg-white flex flex-col justify-center items-center text-center"
+            >
+              <h3 class="text-xl font-semibold text-gray-800 mb-3">{{ slide.title }}</h3>
+              <p class="text-gray-600">{{ slide.description }}</p>
+            </SwiperSlide>
+          </Swiper>
+        </template>
+      </ClientOnly>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref, defineAsyncComponent, onMounted } from 'vue'
+import { Autoplay, Pagination } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+
+const activeIndex = ref(0)
+const swiper = ref(null)
+const Swiper = ref(null)
+const SwiperSlide = ref(null)
+
+const slides = [
+  { title: "سرویس 1", description: "توضیحات مختصر درباره سرویس 1." },
+  { title: "سرویس 2", description: "توضیحات مختصر درباره سرویس 2." },
+  { title: "سرویس 3", description: "توضیحات مختصر درباره سرویس 3." },
+  { title: "سرویس 4", description: "توضیحات مختصر درباره سرویس 4." },
+  { title: "سرویس 5", description: "توضیحات مختصر درباره سرویس 5." }
+]
+
+// فقط در سمت کلاینت ماژول‌ها را به صورت async ایمپورت کن
+onMounted(async () => {
+  const swiperModule = await import('swiper/vue')
+  Swiper.value = swiperModule.Swiper
+  SwiperSlide.value = swiperModule.SwiperSlide
+})
+
+function onSwiper(swiperInstance) {
+  swiper.value = swiperInstance
+}
+
+function onSlideChange() {
+  if (swiper.value) {
+    activeIndex.value = swiper.value.realIndex
+  }
+}
+
+function goToSlide(index) {
+  if (swiper.value) {
+    swiper.value.slideToLoop(index)
+  }
+}
 </script>
+
+
+
+
 
