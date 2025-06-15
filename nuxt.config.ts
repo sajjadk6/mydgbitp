@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   components: [
     {
       path: "~/components",
-      pathPrefix: false,
+      pathPrefix: false, //for no nameee
     },
   ],
 });
